@@ -457,11 +457,6 @@ public final class WindowsRegistryInjestModule implements FileIngestModule {
         }
         
         try {
-            if (localFile.getAbsolutePath().contains("D:\\Autopsy_Cases\\Registry_Test_m1\\ModuleOutput\\Windows Registry Module\\SYSTEM_58\\ROOT\\ControlSet001\\Control\\Class\\%7B4d36e96c-e325-11ce-bfc1-08002be10318%7D\\0000\\Drivers\\aux\\wdmaud.drv\\Driver.bin")) {
-                    
-                logger.log(Level.SEVERE, "XXXXXX");
-                        
-            }
             localFile.getParentFile().mkdirs();
             localFile.createNewFile();
         } catch (SecurityException e) {
@@ -473,11 +468,6 @@ public final class WindowsRegistryInjestModule implements FileIngestModule {
         }
         
         try {
-            if (localFile.getAbsolutePath().contains("D:\\Autopsy_Cases\\Registry_Test_m1\\ModuleOutput\\Windows Registry Module\\SYSTEM_58\\ROOT\\ControlSet001\\Control\\Session+Manager\\DOS+Devices\\AUX.bin")) {
-                    
-                logger.log(Level.SEVERE, "XXXXXX");
-                        
-            }
             FileChannel chan = new FileOutputStream(localFile, false).getChannel();
             content.position(0x0);
             chan.write(content);
