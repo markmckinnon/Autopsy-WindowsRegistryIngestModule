@@ -115,7 +115,7 @@ public final class WindowsRegistryInjestModule implements FileIngestModule {
 
         if (refCounter.incrementAndGet(jobId) == 1) {
             final Case currentCase = Case.getCurrentCase();
-            unpackDirAbsPath = currentCase.getModulesOutputDirAbsPath() + File.separator + WindowsRegistryModuleFactory.getModuleName();
+            unpackDirAbsPath = currentCase.getModuleDirectory() + File.separator + WindowsRegistryModuleFactory.getModuleName();
             fileManager = currentCase.getServices().getFileManager();
 
             File unpackDirPathFile = new File(unpackDirAbsPath);
@@ -189,7 +189,7 @@ public final class WindowsRegistryInjestModule implements FileIngestModule {
      */
     private String getExtractionDirectoryPathForFile(String derivedPath) {
             final Case currentCase = Case.getCurrentCase();
-            unpackDirAbsPath = currentCase.getModulesOutputDirAbsPath() + File.separator + WindowsRegistryModuleFactory.getModuleName();
+            unpackDirAbsPath = currentCase.getModuleDirectory() + File.separator + WindowsRegistryModuleFactory.getModuleName();
             fileManager = currentCase.getServices().getFileManager();        
             return unpackDirAbsPath + File.separator + derivedPath;
 
